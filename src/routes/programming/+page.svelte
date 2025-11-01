@@ -1,0 +1,1 @@
+# Writing my own tldr terminal client

@@ -1,12 +1,18 @@
 <script lang="ts">
     import { onMount, onDestroy, tick } from 'svelte';
 
-    const intro = `
-        # Welcome to in_outer_space; a blog by me(lajka) about cybersec/music/life/whatever
+    import { create_term, interpret_command, type Terminal } from "$lib/types/terminal.js";
+
+
+    let term_output = `
+        # Welcome to in_outer_space; a blog about cybersec/programming/music/life/whatever
         
         To navigate the website use the following commands:
         * ls - list the pages on this website
         * cd <page> - goto the specified page
+        
+   
+        
     `;
 
     const names = [
@@ -35,8 +41,9 @@
     ];
 
     let name = names[0];
+    let prompt_input = "";
     let name_id = 0;
-    let user_input = "";
+    let user_input = "[" + name + "@in_outer_space ~]$ ";
     function change_name() {
         name = names[(name_id + ++name_id) % names.length];
     }
@@ -50,14 +57,20 @@
     });
 
 
+    const term: Terminal = create_term();
     function handleKey(event: KeyboardEvent) {
         if (event.key === 'Enter') {
-            user_input = "";
-
+            term_output += user_input + "\n\n" + interpret_command(term, prompt_input) + "\n\n";
+            user_input = user_input.slice(0, user_input.length - prompt_input.length);
+            prompt_input = ""
         } else if (event.key === 'Delete' || event.key === 'Backspace') {
-            user_input = user_input.slice(0, user_input.length-1);
+            if (prompt_input.length > 0) {
+                user_input = user_input.slice(0, user_input.length-1);
+                prompt_input = prompt_input.slice(0, prompt_input.length-1);
+            }
         }
         else {
+            prompt_input += event.key;
             user_input += event.key;
         }
     }
@@ -71,13 +84,13 @@
 <svelte:window on:keydown={handleKey} />
 <div id="layout">
     <div id="term_nav">
-        <div class="term_output">
-            <p style="white-space: pre-line;">{intro}</p>
+        <div class="term_output" style="white-space: pre;">
+            <p style="white-space: pre-line;">{term_output}</p>
         </div>
         <div id="prompt_div">
             <div id="prompt_div_left">
                 <p id="term_prompt">
-                    [{name}@in_outer_space ~]$ &nbsp; {user_input}
+                    {user_input}
                 </p>
             </div>
         </div>
@@ -113,6 +126,7 @@
         width: 1000px;
         background-color: black;
         border: 2px solid white;
+
     }
 
     #prompt_div {
@@ -124,9 +138,10 @@
     #prompt_div_left {
         display: flex;
         align-items: center;
-        width: max-content;
-        font-size: 15pt;
-        height:max-content;
+        width: fit-content;
+        font-size: 14pt;
+        height:fit-content;
+        margin-top: -50px;
     }
 
     #term_prompt {
@@ -149,7 +164,7 @@
     }
 
     .term_output {
-        font-size: 13pt;
+        font-size: 14pt;
         color: pink;
         white-space: pre;     
     }
