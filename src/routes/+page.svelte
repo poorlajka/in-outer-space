@@ -139,7 +139,7 @@
         display: flex;
         align-items: center;
         width: fit-content;
-        font-size: 14pt;
+        font-size: 15pt;
         height:fit-content;
         margin-top: -50px;
     }
@@ -164,8 +164,8 @@
     }
 
     .term_output {
-        font-size: 14pt;
-        color: pink;
+        font-size: 15pt;
+        color: white;
         white-space: pre;     
     }
 </style>

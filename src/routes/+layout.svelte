@@ -19,6 +19,8 @@
 		margin: 0;
 		padding: 0;
         background-color: black;
-		font-family: 'Roboto', sans-serif;
+		font-family: "Times New Roman", Times, serif;
+
+		color: #e0e0de;
 	}
 </style>
