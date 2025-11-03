@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount, onDestroy, tick } from 'svelte';
-
+    import MusicPlayer from "$lib/components/MusicPlayer.svelte";
     import { create_term, interpret_command, type Terminal } from "$lib/types/terminal.js";
 
 
@@ -40,29 +40,33 @@
         "mitchell"
     ];
 
-    let name = names[0];
-    let prompt_input = "";
+    let name = $state(names[0]);
+    let prompt_input = "ls";
     let name_id = 0;
-    let user_input = "[" + name + "@in_outer_space ~]$ ";
+    let user_input = $derived("[" + name + "@in_outer_space ~]$ ls");
     function change_name() {
         name = names[(name_id + ++name_id) % names.length];
     }
     let interval: ReturnType<typeof setInterval>;
     onMount(() => {
         interval = setInterval(change_name, 5000); // run every 1000ms (1 second)
+        term_enter();
     });
 
     onDestroy(() => {
         clearInterval(interval); // clean up when component is removed
     });
 
+    const term_enter = (): void => {
+        term_output += user_input + "\n\n" + interpret_command(term, prompt_input) + "\n\n";
+        user_input = user_input.slice(0, user_input.length - prompt_input.length);
+        prompt_input = ""
+    }
 
     const term: Terminal = create_term();
     function handleKey(event: KeyboardEvent) {
         if (event.key === 'Enter') {
-            term_output += user_input + "\n\n" + interpret_command(term, prompt_input) + "\n\n";
-            user_input = user_input.slice(0, user_input.length - prompt_input.length);
-            prompt_input = ""
+            term_enter();
         } else if (event.key === 'Delete' || event.key === 'Backspace') {
             if (prompt_input.length > 0) {
                 user_input = user_input.slice(0, user_input.length-1);
@@ -77,9 +81,11 @@
 
 </script>
 
+
 <h1 id="title">
     in_outer_space/<span id="where_at">home</span>
 </h1>
+    <img src="/images/deamon.jpg" alt="TODO" id="intro_image">
 
 <svelte:window on:keydown={handleKey} />
 <div id="layout">
@@ -99,10 +105,22 @@
 
 
 <style>
+
+
     #title {
+        font-size: 25pt;
         position: absolute;
         color: white;
+        font-family: "Montserrat", sans-serif;
         margin-left: 30px;
+        z-index: 10;
+    }
+
+    #intro_image {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        z-index: 0;
     }
 
     #light_mode {
@@ -124,8 +142,6 @@
         padding-left: 30px;
         height: 700px;
         width: 1000px;
-        background-color: black;
-        border: 2px solid white;
 
     }
 
@@ -139,7 +155,7 @@
         display: flex;
         align-items: center;
         width: fit-content;
-        font-size: 15pt;
+        font-size: 17pt;
         height:fit-content;
         margin-top: -50px;
     }
@@ -160,12 +176,16 @@
     }
 
     #where_at {
-        color: pink;
+        color: #A490F4;
     }
 
     .term_output {
-        font-size: 15pt;
+        font-size: 17pt;
         color: white;
         white-space: pre;     
     }
+
+
 </style>
+
+<MusicPlayer />

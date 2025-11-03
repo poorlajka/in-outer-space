@@ -139,7 +139,7 @@ const run_ls = (term: Terminal, args: string[]): string => {
     }
 
     return working_dir.children
-        .reduce((children, child) => children + "         " + child.name, "");
+        .reduce((children, child) => children + " " + child.name, "");
 }
 
 const run_cd = (term: Terminal, args: string[]): string => {
