@@ -7,8 +7,8 @@
 </h1>
 
 <ul id="menu">
-    <li>learning_reverse_engineering &lt== you are here</li>
     <li>cloud_security</li>
+    <li>learning_reverse_engineering &lt== you are here</li>
     <li>stealing_cookies</li>
     <li>nmap_scripting</li>
 </ul>
@@ -72,7 +72,7 @@ Praesent consequat est et enim consequat, in ultrices justo varius. Donec id ult
 </footer>
 </div>
 
-<MusicPlayer />
+<!--<MusicPlayer />-->
 <style>
     .dropcap::first-letter {
     float: left;

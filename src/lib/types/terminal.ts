@@ -16,6 +16,7 @@ interface FileNode {
 
 interface DirNode {
     type: "directory";
+    link: string;
     name: string;
     children: FileSysNode[];
 }
@@ -53,38 +54,38 @@ const create_file_sys = (): DirNode => {
     };
 
     const dir_paths = [
-        "/boot",
-        "/efi",
-        "/etc",
-        "/home",
-        "/home/lajka",
-        "/home/lajka/test",
-        "/home/lajka/dir2",
-        "/root",
-        "/srv",
-        "/tmp",
-        "/usr",
-        "/usr/bin",
-        "/usr/sbin",
-        "/usr/lib",
-        "/usr/share",
-        "/var",
-        "/var/cache",
-        "/var/lib",
-        "/var/log",
-        "/var/tmp",
-        "/bin",
-        "/sbin",
+        ["/boot", ""],
+        ["/efi",""],
+        ["/etc",""],
+        ["/home",""],
+        ["/home/lajka",""],
+        ["/home/lajka/programming","/programming"],
+        ["/home/lajka/dir2",""],
+        ["/root",""],
+        ["/srv",""],
+        ["/tmp",""],
+        ["/usr",""],
+        ["/usr/bin",""],
+        ["/usr/sbin",""],
+        ["/usr/lib",""],
+        ["/usr/share",""],
+        ["/var",""],
+        ["/var/cache",""],
+        ["/var/lib",""],
+        ["/var/log",""],
+        ["/var/tmp",""],
+        ["/bin",""],
+        ["/sbin",""],
     ];
 
-    for (const dir_path of dir_paths) {
-        mkdir(file_sys, dir_path.slice(1).split("/"));
+    for (const [dir_path, dir_link] of dir_paths) {
+        mkdir(file_sys, dir_path.slice(1).split("/"), dir_link);
     }
 
     return file_sys;
 }
 
-const mkdir = (root: DirNode, path: string[]) => {
+const mkdir = (root: DirNode, path: string[], link: string) => {
 
     const child = dir_contains(root, path[0]);
 
@@ -94,12 +95,13 @@ const mkdir = (root: DirNode, path: string[]) => {
                 type: "directory",
                 name: path[0],
                 children: [],
+                link,
             });
         }
     }
     else {
         if (child !== null && child.type == "directory") {
-            mkdir(child, path.slice(1));
+            mkdir(child, path.slice(1), link);
         }
     }
 }
@@ -139,8 +141,26 @@ const run_ls = (term: Terminal, args: string[]): string => {
     }
 
     return working_dir.children
-        .reduce((children, child) => children + " " + child.name, "");
+        .reduce((children, child) => children + get_node_html(child) + "&nbsp;", "");
 }
+
+const get_node_html = (child: FileSysNode): string => {
+    if (child.type === "file") {
+        return child.name;
+    }
+
+    else if (child.type === "directory") {
+        if (child.link === "") {
+            return child.name;
+        }
+        else {
+            const name = child.name;
+            const link = child.link;
+            return `<a href="{link}" class="dirs">📁{name}</a>`;
+        }
+    }
+}
+
 
 const run_cd = (term: Terminal, args: string[]): string => {
     return "";

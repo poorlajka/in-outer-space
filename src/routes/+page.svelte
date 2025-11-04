@@ -4,16 +4,13 @@
     import { create_term, interpret_command, type Terminal } from "$lib/types/terminal.js";
 
 
-    let term_output = `
+    let term_output = $state(`
         # Welcome to in_outer_space; a blog about cybersec/programming/music/life/whatever
         
-        To navigate the website use the following commands:
-        * ls - list the pages on this website
-        * cd <page> - goto the specified page
-        
-   
-        
-    `;
+        To navigate the website use the following commands: <br>
+        * ls - list the pages on this website <br>
+        * cd <page> - goto the specified page <br>
+    `);
 
     const names = [
         "lajka",
@@ -58,7 +55,7 @@
     });
 
     const term_enter = (): void => {
-        term_output += user_input + "\n\n" + interpret_command(term, prompt_input) + "\n\n";
+        term_output += user_input + "<br>" + interpret_command(term, prompt_input);
         user_input = user_input.slice(0, user_input.length - prompt_input.length);
         prompt_input = ""
     }
@@ -90,14 +87,12 @@
 <svelte:window on:keydown={handleKey} />
 <div id="layout">
     <div id="term_nav">
-        <div class="term_output" style="white-space: pre;">
-            <p style="white-space: pre-line;">{term_output}</p>
+        <div class="term_output">
+            <p>{@html term_output}</p>
         </div>
         <div id="prompt_div">
             <div id="prompt_div_left">
-                <p id="term_prompt">
                     {user_input}
-                </p>
             </div>
         </div>
     </div>
@@ -136,13 +131,18 @@
         width: 100vw;
     }
 
+    .dirs {
+        color: white;
+        font-size: 50pt;
+        z-index: 40;
+    }
+
     #term_nav {
         position: absolute;
         padding-top: 10px;
         padding-left: 30px;
         height: 700px;
         width: 1000px;
-
     }
 
     #prompt_div {
@@ -157,7 +157,6 @@
         width: fit-content;
         font-size: 17pt;
         height:fit-content;
-        margin-top: -50px;
     }
 
     #term_prompt {
@@ -182,7 +181,6 @@
     .term_output {
         font-size: 17pt;
         color: white;
-        white-space: pre;     
     }
 
 
