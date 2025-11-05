@@ -9,7 +9,7 @@
         
         To navigate the website use the following commands: <br>
         * ls - list the pages on this website <br>
-        * cd <page> - goto the specified page <br>
+        * cd <page> - goto the specified page <br><br>
     `);
 
     const names = [
@@ -55,7 +55,7 @@
     });
 
     const term_enter = (): void => {
-        term_output += user_input + "<br>" + interpret_command(term, prompt_input);
+        term_output += user_input + "<br>".repeat(2) + interpret_command(term, prompt_input) + "<br>".repeat(2);
         user_input = user_input.slice(0, user_input.length - prompt_input.length);
         prompt_input = ""
     }
@@ -82,7 +82,6 @@
 <h1 id="title">
     in_outer_space/<span id="where_at">home</span>
 </h1>
-    <img src="/images/deamon.jpg" alt="TODO" id="intro_image">
 
 <svelte:window on:keydown={handleKey} />
 <div id="layout">
@@ -131,17 +130,29 @@
         width: 100vw;
     }
 
-    .dirs {
+
+    .term_output:hover {
         color: white;
-        font-size: 50pt;
-        z-index: 40;
+        color: white;
+        text-decoration: none;
+    }
+
+    .term_output:active {
+        color: white;
+        color: white;
+        text-decoration: none;
+    }
+
+    .term_output:visited {
+        color: white;
+        text-decoration: none;
     }
 
     #term_nav {
         position: absolute;
         padding-top: 10px;
         padding-left: 30px;
-        height: 700px;
+        height: 500px;
         width: 1000px;
     }
 
@@ -149,13 +160,14 @@
         display: flex;
         align-items: center;
         justify-content: left;
+        margin-top: -23px;
     }
 
     #prompt_div_left {
         display: flex;
         align-items: center;
         width: fit-content;
-        font-size: 17pt;
+        font-size: 18pt;
         height:fit-content;
     }
 
@@ -179,11 +191,30 @@
     }
 
     .term_output {
-        font-size: 17pt;
+        font-size: 18pt;
+        position: relative;
+        text-decoration: none;
+        z-index: 10;
         color: white;
+    }
+
+    :global(.term_link) {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 25pt;
+    }
+
+    :global(.term_link:hover) {
+        color: #A490F4;
+        text-decoration: none;
+    }
+
+    :global(.term_link:active) {
+        color: white;
+        text-decoration: none;
     }
 
 
 </style>
 
-<MusicPlayer />

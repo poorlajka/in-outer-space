@@ -59,8 +59,10 @@ const create_file_sys = (): DirNode => {
         ["/etc",""],
         ["/home",""],
         ["/home/lajka",""],
+        ["/home/lajka/cybersec","/programming"],
+        ["/home/lajka/music","/programming"],
         ["/home/lajka/programming","/programming"],
-        ["/home/lajka/dir2",""],
+        ["/home/lajka/diary","/programming"],
         ["/root",""],
         ["/srv",""],
         ["/tmp",""],
@@ -141,7 +143,7 @@ const run_ls = (term: Terminal, args: string[]): string => {
     }
 
     return working_dir.children
-        .reduce((children, child) => children + get_node_html(child) + "&nbsp;", "");
+        .reduce((children, child) => children + get_node_html(child) + "&nbsp;".repeat(6), "");
 }
 
 const get_node_html = (child: FileSysNode): string => {
@@ -149,15 +151,11 @@ const get_node_html = (child: FileSysNode): string => {
         return child.name;
     }
 
-    else if (child.type === "directory") {
-        if (child.link === "") {
-            return child.name;
-        }
-        else {
-            const name = child.name;
-            const link = child.link;
-            return `<a href="{link}" class="dirs">📁{name}</a>`;
-        }
+    if (child.link === "") {
+        return child.name;
+    }
+    else {
+        return `<a href="${child.link}" class="term_link">🌐${child.name}</a>`;
     }
 }
 

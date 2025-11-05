@@ -8,9 +8,12 @@
 
 <ul id="menu">
     <li>cloud_security</li>
-    <li>learning_reverse_engineering &lt== you are here</li>
-    <li>stealing_cookies</li>
-    <li>nmap_scripting</li>
+    <li>quantum_kill_my_crypto???</li>
+    <li>multivariate_cryptography</li>
+    <li>mpc_in_the_head</li>
+    <li>reverse_engineering &nbsp;&nbsp; &lt== you are here</li>
+    <li>cross_site_request_forgery</li>
+    <li>linux_privesc</li>
 </ul>
 
 <div id="layout">
