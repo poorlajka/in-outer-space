@@ -1,0 +1,48 @@
+
+Last month I decided I would write my own tldr terminal client.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae vestibulum erat. Curabitur tempor euismod lorem, vitae sagittis neque laoreet et. Maecenas sed arcu nec ipsum mattis luctus. Quisque pretium, leo nec tincidunt gravida, erat nulla vulputate lorem, sed lacinia orci erat nec risus.\n
+
+
+## Try 2
+
+$$
+\int_2^5 x^3dx
+$$
+
+Aliquam erat volutpat. Integer pretium augue at velit consequat, sit amet luctus mauris consequat. Nulla convallis nisi et sapien sagittis, at sodales lacus vestibulum. Cras id velit dignissim, egestas justo at, vehicula odio. Vestibulum sed congue lorem, nec porttitor justo.
+
+Suspendisse vel efficitur turpis. Mauris ultrices dignissim justo, eget iaculis ipsum porttitor in. Donec non tortor fringilla, sollicitudin lorem ut, malesuada neque. Praesent eget massa urna. Duis luctus eros in lacus mattis, a blandit ex faucibus.
+
+Fusce dictum velit in turpis tincidunt, non finibus urna porta. Nulla facilisi. Donec maximus odio non lorem lacinia, ac vestibulum arcu congue. Sed nec posuere erat, ut suscipit ante. Vestibulum malesuada fermentum eros vitae euismod.
+
+Praesent consequat est et enim consequat, in ultrices justo varius. Donec id ultricies lacus, at suscipit turpis. Curabitur a turpis et mi volutpat laoreet. Aenean commodo risus quis enim tincidunt, in gravida velit imperdiet.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae vestibulum erat. Curabitur tempor euismod lorem, vitae sagittis neque laoreet et. Maecenas sed arcu nec ipsum mattis luctus. Quisque pretium, leo nec tincidunt gravida, erat nulla vulputate lorem, sed lacinia orci erat nec risus.
+
+Aliquam erat volutpat. Integer pretium augue at velit consequat, sit amet luctus mauris consequat. Nulla convallis nisi et sapien sagittis, at sodales lacus vestibulum. Cras id velit dignissim, egestas justo at, vehicula odio. Vestibulum sed congue lorem, nec porttitor justo.
+
+Suspendisse vel efficitur turpis. Mauris ultrices dignissim justo, eget iaculis ipsum porttitor in. Donec non tortor fringilla, sollicitudin lorem ut, malesuada neque. Praesent eget massa urna. Duis luctus eros in lacus mattis, a blandit ex faucibus.
+
+Fusce dictum velit in turpis tincidunt, non finibus urna porta. Nulla facilisi. Donec maximus odio non lorem lacinia, ac vestibulum arcu congue. Sed nec posuere erat, ut suscipit ante. Vestibulum malesuada fermentum eros vitae euismod.
+
+Praesent consequat est et enim consequat, in ultrices justo varius. Donec id ultricies lacus, at suscipit turpis. Curabitur a turpis et mi volutpat laoreet. Aenean commodo risus quis enim tincidunt, in gravida velit imperdiet.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae vestibulum erat. Curabitur tempor euismod lorem, vitae sagittis neque laoreet et. Maecenas sed arcu nec ipsum mattis luctus. Quisque pretium, leo nec tincidunt gravida, erat nulla vulputate lorem, sed lacinia orci erat nec risus.
+
+Aliquam erat volutpat. Integer pretium augue at velit consequat, sit amet luctus mauris consequat. Nulla convallis nisi et sapien sagittis, at sodales lacus vestibulum. Cras id velit dignissim, egestas justo at, vehicula odio. Vestibulum sed congue lorem, nec porttitor justo.
+
+Suspendisse vel efficitur turpis. Mauris ultrices dignissim justo, eget iaculis ipsum porttitor in. Donec non tortor fringilla, sollicitudin lorem ut, malesuada neque. Praesent eget massa urna. Duis luctus eros in lacus mattis, a blandit ex faucibus.
+
+Fusce dictum velit in turpis tincidunt, non finibus urna porta. Nulla facilisi. Donec maximus odio non lorem lacinia, ac vestibulum arcu congue. Sed nec posuere erat, ut suscipit ante. Vestibulum malesuada fermentum eros vitae euismod.
+
+Praesent consequat est et enim consequat, in ultrices justo varius. Donec id ultricies lacus, at suscipit turpis. Curabitur a turpis et mi volutpat laoreet. Aenean commodo risus quis enim tincidunt, in gravida velit imperdiet.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae vestibulum erat. Curabitur tempor euismod lorem, vitae sagittis neque laoreet et. Maecenas sed arcu nec ipsum mattis luctus. Quisque pretium, leo nec tincidunt gravida, erat nulla vulputate lorem, sed lacinia orci erat nec risus.
+
+Aliquam erat volutpat. Integer pretium augue at velit consequat, sit amet luctus mauris consequat. Nulla convallis nisi et sapien sagittis, at sodales lacus vestibulum. Cras id velit dignissim, egestas justo at, vehicula odio. Vestibulum sed congue lorem, nec porttitor justo.
+
+Suspendisse vel efficitur turpis. Mauris ultrices dignissim justo, eget iaculis ipsum porttitor in. Donec non tortor fringilla, sollicitudin lorem ut, malesuada neque. Praesent eget massa urna. Duis luctus eros in lacus mattis, a blandit ex faucibus.
+
+Fusce dictum velit in turpis tincidunt, non finibus urna porta. Nulla facilisi. Donec maximus odio non lorem lacinia, ac vestibulum arcu congue. Sed nec posuere erat, ut suscipit ante. Vestibulum malesuada fermentum eros vitae euismod.
+
+Praesent consequat est et enim consequat, in ultrices justo varius. Donec id ultricies lacus, at suscipit turpis. Curabitur a turpis et mi volutpat laoreet. Aenean commodo risus quis enim tincidunt, in gravida velit imperdiet.

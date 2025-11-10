@@ -79,10 +79,6 @@
 </script>
 
 
-<h1 id="title">
-    in_outer_space/<span id="where_at">home</span>
-</h1>
-
 <svelte:window on:keydown={handleKey} />
 <div id="layout">
     <div id="term_nav">
@@ -99,37 +95,12 @@
 
 
 <style>
-
-
-    #title {
-        font-size: 25pt;
-        position: absolute;
-        color: white;
-        font-family: "Montserrat", sans-serif;
-        margin-left: 30px;
-        z-index: 10;
-    }
-
-    #intro_image {
-        width: 400px;
-        height: 400px;
-        position: absolute;
-        z-index: 0;
-    }
-
-    #light_mode {
-        position: absolute;
-        color: white;
-        right: 30px;
-    }
-
     #layout {
         display: grid;
         place-items: center;
         height: 100vh;
         width: 100vw;
     }
-
 
     .term_output:hover {
         color: white;
